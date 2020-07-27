@@ -12,10 +12,26 @@ import javax.servlet.http.HttpServletResponse;
 public class OssController {
     @Autowired
     OssService ossService;
+
+    /**
+     * 简单文件上传
+     * @param request
+     * @param response
+     */
     @RequestMapping("/upload")
     public void upload(HttpServletRequest request, HttpServletResponse response) {
         String uploadAddress = "C:\\Users\\xpf14561456\\Desktop\\1.png";
         String newName = "1.png";
         ossService.upload(newName, uploadAddress);
+    }
+
+    /**
+     * 下载文件到本地
+     */
+    @RequestMapping("/download")
+    public void download() {
+        String downloadAddress = "C:\\Users\\xpf14561456\\Desktop\\download\\1.png";
+        String fileName = "1.png";
+        ossService.download(fileName,downloadAddress);
     }
 }
