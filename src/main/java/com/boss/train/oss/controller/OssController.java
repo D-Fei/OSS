@@ -34,4 +34,13 @@ public class OssController {
         String fileName = "1.png";
         ossService.download(fileName,downloadAddress);
     }
+
+    /**
+     * 删除单个文件
+     */
+    @RequestMapping("/delete")
+    public void delete() {
+        String fileName = "1.png";
+        ossService.delete(fileName);
+    }
 }

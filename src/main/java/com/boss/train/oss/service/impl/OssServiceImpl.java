@@ -36,4 +36,14 @@ public class OssServiceImpl implements OssService {
         ossClient.getObject(new GetObjectRequest(configEntity.getBucketName(), fileName), new File(downloadAddress));
         ossClient.shutdown();
     }
+
+    /**
+     * 删除单个文件
+     * @param fileName
+     */
+    @Override
+    public void delete(String fileName) {
+        ossClient.deleteObject(configEntity.getBucketName(), fileName);
+        ossClient.shutdown();
+    }
 }

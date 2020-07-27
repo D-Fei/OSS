@@ -14,4 +14,10 @@ public interface OssService {
      * @param downloadAddress
      */
     public void download(String fileName, String downloadAddress);
+
+    /**
+     * 删除单个文件
+     * @param fileName
+     */
+    public void delete(String fileName);
 }
